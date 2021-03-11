@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ViewController: UIViewController {
     
@@ -14,22 +15,31 @@ class ViewController: UIViewController {
     @IBOutlet weak var weatherImage: UIImageView!
     @IBOutlet weak var maxTemperature: UILabel!
     @IBOutlet weak var minTemperature: UILabel!
+    @IBOutlet weak var weatherName: UILabel!
+    
     var weatherManager = WeatherManager()
+    lazy var locationManager: CLLocationManager = {
+        
+        let lm = CLLocationManager()
+        lm.delegate = self
+        lm.requestAlwaysAuthorization()
+        return lm
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        weatherManager.fetchCurrentWeather(withCity: "Lviv") 
-        // Do any additional setup after loading the view.
-//        weatherManager.delegate = self
         weatherManager.onComplition = { [weak self] currentWeather in
             guard let self = self else { return }
             self.updateInerface(currentWeather: currentWeather)
-            
+        }
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.requestLocation()
         }
     }
     
     @IBAction func searchButtonPressed(_ sender: UIButton) {
         self.PresentAlertController(with: "Місто", message: "Для отримання інофрмаці про погоду введіть місто", style: .actionSheet) { city in
+            self.weatherImage.image = UIImage(systemName: "wand.and.stars.inverse")
             self.weatherManager.fetchCurrentWeather(withCity: city)
             
         }
@@ -41,8 +51,11 @@ class ViewController: UIViewController {
             self.weatherImage.image = UIImage(systemName: currentWeather.conditionName)
             self.maxTemperature.text = "Max \(currentWeather.tempMaxString)°C"
             self.minTemperature.text = "Min  \(currentWeather.tempMinString)°C"
+            self.weatherName.text = currentWeather.weatherName
         }
     }
 }
+
+
 
 

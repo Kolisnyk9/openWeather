@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -95,27 +94,38 @@
                                     <constraint firstItem="LRD-aQ-2xG" firstAttribute="top" secondItem="Pfz-71-IIL" secondAttribute="top" id="gYn-KG-ovR"/>
                                 </constraints>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="InE-9O-kXU">
-                                <rect key="frame" x="77" y="192.5" width="260" height="241"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wand.and.stars.inverse" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="InE-9O-kXU">
+                                <rect key="frame" x="77" y="242.5" width="260" height="242"/>
                                 <color key="tintColor" systemColor="systemTealColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="260" id="QZn-wj-aGA"/>
                                     <constraint firstAttribute="height" constant="243" id="pow-gw-i1o"/>
                                 </constraints>
-                                <imageReference key="image" image="sun.dust" catalog="system" symbolScale="small" renderingMode="template"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOc-r1-C32">
+                                <rect key="frame" x="20" y="213" width="374" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="i0x-rW-IIp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3pq-Yl-8bt" secondAttribute="trailing" constant="20" id="1Uv-ec-8oy"/>
+                            <constraint firstItem="InE-9O-kXU" firstAttribute="top" secondItem="DOc-r1-C32" secondAttribute="bottom" constant="8" symbolic="YES" id="5rj-hN-GSX"/>
                             <constraint firstItem="Pfz-71-IIL" firstAttribute="top" secondItem="3pq-Yl-8bt" secondAttribute="bottom" constant="8" symbolic="YES" id="9WR-2z-WE9"/>
                             <constraint firstItem="3pq-Yl-8bt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="JAc-Yk-ckb"/>
+                            <constraint firstItem="DOc-r1-C32" firstAttribute="top" secondItem="Pfz-71-IIL" secondAttribute="bottom" constant="30" id="JEm-yV-t5X"/>
                             <constraint firstItem="InE-9O-kXU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Z1B-Lw-7GI"/>
+                            <constraint firstItem="DOc-r1-C32" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="b1L-Yp-FO1"/>
                             <constraint firstItem="Pfz-71-IIL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="brZ-nc-0t7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DOc-r1-C32" secondAttribute="trailing" constant="20" id="d5V-M4-YYs"/>
                             <constraint firstItem="3pq-Yl-8bt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="mGF-a9-en3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="53K-Fk-hAi" secondAttribute="trailing" constant="20" id="mWw-Pk-Y3n"/>
-                            <constraint firstItem="InE-9O-kXU" firstAttribute="top" secondItem="Pfz-71-IIL" secondAttribute="bottom" constant="8" symbolic="YES" id="xO6-fo-OdY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="53K-Fk-hAi" secondAttribute="bottom" constant="78" id="y9i-nM-1cb"/>
                         </constraints>
                     </view>
@@ -125,6 +135,7 @@
                         <outlet property="minTemperature" destination="RKv-vn-XDB" id="ZVE-Yr-KG7"/>
                         <outlet property="temperatureLabel" destination="FKc-Pa-i32" id="o8A-l6-opf"/>
                         <outlet property="weatherImage" destination="InE-9O-kXU" id="FKQ-Ny-CBV"/>
+                        <outlet property="weatherName" destination="DOc-r1-C32" id="wZa-IV-Usc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -134,7 +145,7 @@
     </scenes>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="sun.dust" catalog="system" width="128" height="119"/>
+        <image name="wand.and.stars.inverse" catalog="system" width="128" height="113"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

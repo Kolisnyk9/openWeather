@@ -10,6 +10,20 @@ struct CurrentWeather{
     
     let cityName: String
     let id: Int
+    var weatherName: String {
+        switch id {
+        case 200...232: return "Thunderstorm"
+        case 300...321: return "Drizzle"
+        case 500...531: return "Rain"
+        case 600...622: return "Snow"
+        case 701...781: return "Mist"
+        case 800:       return "Clear sky"
+        case 800...804: return "Cloudy"
+            
+        default:
+            return ""
+        }
+    }
     var conditionName: String {
         switch id {
         case 200...232: return "cloud.bolt.fill"
@@ -37,14 +51,14 @@ struct CurrentWeather{
     
     let tempMin: Double
     var tempMinString: String{
-        return String(format: "%.0f", tempMin)
+        return String(format: "%.1f", tempMin)
     }
     
     let tempMax: Double
     var tempMaxString: String{
-        return String(format: "%.0f", tempMax)
+        return String(format: "%.1f", tempMax)
     }
-
+    
     
     init?(CurrentWeatherData: CurrentWeatherData) {
         cityName = CurrentWeatherData.name

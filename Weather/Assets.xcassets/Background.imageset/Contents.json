@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "normal.pdf",
+      "filename" : "normal-2.pdf",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -28,6 +28,7 @@
       "scale" : "1x"
     },
     {
+      "filename" : "normal.pdf",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -38,6 +39,7 @@
           "value" : "light"
         }
       ],
+      "filename" : "normal-4.pdf",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -48,10 +50,12 @@
           "value" : "dark"
         }
       ],
+      "filename" : "Black-1.pdf",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "normal-3.pdf",
       "idiom" : "universal",
       "scale" : "3x"
     },
@@ -62,6 +66,7 @@
           "value" : "light"
         }
       ],
+      "filename" : "normal-5.pdf",
       "idiom" : "universal",
       "scale" : "3x"
     },

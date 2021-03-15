@@ -16,6 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="AfZ-Wn-3AZ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="53K-Fk-hAi">
                                 <rect key="frame" x="236" y="744" width="158" height="40"/>
                                 <constraints>
@@ -116,10 +119,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3pq-Yl-8bt" secondAttribute="trailing" constant="20" id="1Uv-ec-8oy"/>
+                            <constraint firstAttribute="bottom" secondItem="AfZ-Wn-3AZ" secondAttribute="bottom" id="32I-nt-sB3"/>
                             <constraint firstItem="InE-9O-kXU" firstAttribute="top" secondItem="DOc-r1-C32" secondAttribute="bottom" constant="8" symbolic="YES" id="5rj-hN-GSX"/>
+                            <constraint firstItem="AfZ-Wn-3AZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9Qs-U2-h0D"/>
                             <constraint firstItem="Pfz-71-IIL" firstAttribute="top" secondItem="3pq-Yl-8bt" secondAttribute="bottom" constant="8" symbolic="YES" id="9WR-2z-WE9"/>
+                            <constraint firstItem="AfZ-Wn-3AZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Gyx-Ma-r7R"/>
                             <constraint firstItem="3pq-Yl-8bt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="JAc-Yk-ckb"/>
                             <constraint firstItem="DOc-r1-C32" firstAttribute="top" secondItem="Pfz-71-IIL" secondAttribute="bottom" constant="30" id="JEm-yV-t5X"/>
+                            <constraint firstAttribute="trailing" secondItem="AfZ-Wn-3AZ" secondAttribute="trailing" id="ON0-2L-KQd"/>
                             <constraint firstItem="InE-9O-kXU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Z1B-Lw-7GI"/>
                             <constraint firstItem="DOc-r1-C32" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="b1L-Yp-FO1"/>
                             <constraint firstItem="Pfz-71-IIL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="brZ-nc-0t7"/>
@@ -144,6 +151,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Background" width="475" height="709"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="wand.and.stars.inverse" catalog="system" width="128" height="113"/>
         <namedColor name="AccentColor">
